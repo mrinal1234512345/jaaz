@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101b20" />
+    <meta name="description" content="Meet JAAZ & CO. — modern Indian refreshments made with care. Discover soda, Nannari Sarbath, Jeera Soda and more. Refresh your moments." />
+    <meta property="og:title" content="JAAZ & CO. — Refresh Your Moments" />
+    <meta property="og:description" content="A fresh point of view on the drinks you love." />
+    <meta property="og:type" content="website" />
+    <title>JAAZ &amp; CO. — Refresh Your Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+:root {
+  --ink: #101b20;
+  --ink-soft: #243239;
+  --paper: #f4f5f1;
+  --white: #fff;
+  --muted: #aab5b3;
+  --lime: #c7ee54;
+  --sage: #dbe4d2;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+  --max: 1240px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+::selection { color: var(--ink); background: var(--lime); }
+.container { width: min(var(--max), calc(100% - 96px)); margin: 0 auto; }
+.skip-link { position: absolute; z-index: 100; top: -100px; left: 16px; background: var(--lime); color: var(--ink); padding: 12px 16px; }
+.skip-link:focus { top: 12px; }
+.site-header { height: 82px; position: absolute; z-index: 10; inset: 0 0 auto; color: var(--white); border-bottom: 1px solid rgb(255 255 255 / .19); transition: background .25s, box-shadow .25s, color .25s; }
+.site-header.scrolled { position: fixed; color: var(--ink); background: rgb(244 245 241 / .96); box-shadow: 0 8px 28px rgb(16 27 32 / .08); border-color: transparent; backdrop-filter: blur(14px); }
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 11px; }
+.brand-mark { width: 38px; height: 38px; border: 1px solid currentColor; border-radius: 50%; display: grid; place-items: center; position: relative; }
+.brand-mark span { font: 600 24px var(--serif); line-height: 1; margin: -2px 2px 0 0; }
+.brand-mark i { position: absolute; width: 6px; height: 6px; border-radius: 50%; right: 5px; top: 5px; background: var(--lime); }
+.brand-name { font-size: 14px; letter-spacing: .15em; font-weight: 700; line-height: 1.15; }
+.brand-name b { color: var(--lime); font-weight: 500; }
+.brand-name small { display: block; font-size: 8px; letter-spacing: .29em; margin-top: 5px; font-weight: 500; }
+.nav-links { display: flex; align-items: center; gap: 38px; font-size: 12px; font-weight: 500; letter-spacing: .04em; }
+.nav-links a { transition: color .2s; }
+.nav-links a:hover { color: var(--lime); }
+.nav-links .nav-contact { border: 1px solid rgb(255 255 255 / .6); padding: 12px 17px; margin-left: 7px; transition: background .2s, color .2s, border-color .2s; }
+.scrolled .nav-links .nav-contact { border-color: var(--ink); }
+.nav-contact span { margin-left: 12px; color: var(--lime); font-size: 16px; }
+.menu-toggle { display: none; }
+.hero { min-height: min(820px, 100svh); height: 760px; max-height: 960px; color: white; position: relative; overflow: hidden; background: #24332f; }
+.hero-photo { position: absolute; inset: 0; background-image: url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=2400&q=88"); background-size: cover; background-position: center 52%; transform: scale(1.02); animation: hero-arrive 1.2s ease-out both; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(9 20 25 / .8) 0%, rgb(9 20 25 / .53) 42%, rgb(9 20 25 / .03) 100%), linear-gradient(0deg, rgb(10 18 20 / .38), transparent 34%); }
+.hero-content { position: relative; z-index: 1; padding-top: clamp(190px, 23vh, 240px); }
+.eyebrow { font-size: 10px; line-height: 1.2; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; }
+.eyebrow.light { display: flex; gap: 11px; align-items: center; color: rgb(255 255 255 / .78); }
+.eyebrow-line { width: 27px; height: 1px; background: var(--lime); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font: 500 clamp(64px, 8.4vw, 112px)/.99 var(--serif); letter-spacing: -.045em; margin: 24px 0 23px; }
+h1 em, h2 em, .manifesto-aside em, .footer em { color: var(--lime); font-weight: 500; }
+.hero-copy { font-size: 14px; color: rgb(255 255 255 / .76); line-height: 1.8; margin-bottom: 29px; }
+.hero-actions { display: flex; align-items: center; gap: 29px; }
+.button { min-height: 50px; padding: 0 19px; display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 11px; letter-spacing: .025em; font-weight: 700; border: 1px solid transparent; transition: transform .2s, background .2s, color .2s; cursor: pointer; }
+.button:hover { transform: translateY(-2px); }
+.button span { font-size: 17px; font-weight: 400; }
+.button-lime { color: var(--ink); background: var(--lime); }
+.button-lime:hover { background: #dafc7a; }
+.text-link { font-size: 11px; font-weight: 600; padding-bottom: 6px; border-bottom: 1px solid rgb(16 27 32 / .25); }
+.text-link span { margin-left: 8px; transition: margin .2s; }
+.text-link:hover span { margin-left: 13px; }
+.light-link { color: white; border-color: rgb(255 255 255 / .4); }
+.hero-caption { position: absolute; bottom: 35px; left: 48px; right: 48px; display: flex; justify-content: space-between; color: rgb(255 255 255 / .62); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+.hero-side-note { position: absolute; right: 35px; top: 49%; writing-mode: vertical-rl; font-size: 9px; letter-spacing: .21em; color: rgb(255 255 255 / .68); }
+.scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 9px; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: rgb(255 255 255 / .7); }
+.scroll-cue span { width: 1px; height: 23px; background: var(--lime); }
+.section-pad { padding: 126px 0; }
+.intro { background: var(--paper); }
+.intro-grid { display: grid; grid-template-columns: 1fr 3fr .6fr; gap: 30px; align-items: start; }
+.intro-kicker { display: flex; align-items: center; gap: 14px; color: #66726f; }
+.section-number { font: 500 13px var(--serif); color: #83908c; }
+.intro h2, .section-heading h2, .manifesto h2, .vision h2, .contact h2 { font: 500 clamp(40px, 5.1vw, 66px)/1.08 var(--serif); letter-spacing: -.035em; }
+.intro h2 { margin: 0 0 35px; }
+.intro h2 em, .section-heading h2 em, .vision h2 em, .contact h2 em { color: #879a62; }
+.intro-lower { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 800px; margin-bottom: 25px; }
+.intro-lower p { color: #65716d; font-size: 13px; line-height: 1.9; margin-bottom: 0; }
+.intro-lower .lead { font: 500 21px/1.55 var(--serif); color: var(--ink); }
+.dark-link { display: inline-block; margin-top: 15px; }
+.intro-stamp { width: 115px; height: 115px; justify-self: end; border: 1px solid #a6b098; border-radius: 50%; color: #758460; display: grid; place-content: center; text-align: center; position: relative; transform: rotate(9deg); margin-top: 39px; }
+.intro-stamp span { font-size: 8px; line-height: 1.5; letter-spacing: .13em; font-weight: 700; }
+.intro-stamp i { font-style: normal; color: #899b66; }
+.intro-stamp b { position: absolute; font-size: 13px; font-weight: 400; top: -6px; right: 18px; background: var(--paper); padding: 0 4px; }
+.products { background: #e8ebe5; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 50px; }
+.section-heading .intro-kicker { margin-bottom: 21px; }
+.section-heading h2 { margin: 0; }
+.section-heading > p { color: #73807a; font-size: 12px; line-height: 1.8; margin: 0 0 7px; }
+.product-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 37px 22px; align-items: start; }
+.product-card { min-width: 0; }
+.product-image { height: clamp(265px, 29vw, 382px); position: relative; overflow: hidden; background-size: cover; background-position: center; transition: background-size .4s; }
+.product-image::after { content: ""; inset: 0; position: absolute; background: linear-gradient(180deg, rgb(10 20 18 / .22), transparent 33%, rgb(10 20 18 / .09)); transition: background .25s; }
+.product-card:hover .product-image::after { background: linear-gradient(180deg, rgb(10 20 18 / .32), transparent 45%); }
+.product-image::before { content: ""; position: absolute; width: 160px; height: 160px; border: 1px solid rgb(255 255 255 / .24); border-radius: 50%; right: -65px; bottom: -90px; z-index: 1; }
+.product-feature .product-image { height: clamp(315px, 35vw, 450px); }
+.image-classic { background-image: url("https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?auto=format&fit=crop&w=1100&q=85"); background-position: center 48%; }
+.image-nannari { background-image: url("https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=1000&q=85"); background-position: 52% center; }
+.image-jeera { background-image: url("https://images.unsplash.com/photo-1536935338788846bb9981813?auto=format&fit=crop&w=1000&q=85"); background-position: center; }
+.image-flavoured { background-image: url("https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?auto=format&fit=crop&w=1000&q=85"); background-position: center 54%; }
+.image-traditional { background-image: url("https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=85"); background-position: center 62%; }
+.product-wide { grid-column: span 2; }
+.product-wide .product-image { height: clamp(265px, 29vw, 382px); }
+.product-index, .product-tag { z-index: 2; position: absolute; top: 18px; color: white; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+.product-index { left: 17px; }
+.product-tag { right: 17px; border: 1px solid rgb(255 255 255 / .55); padding: 7px 10px; }
+.product-info { display: flex; justify-content: space-between; gap: 15px; padding: 15px 1px 0; }
+.product-info h3 { font: 500 21px/1.2 var(--serif); margin-bottom: 5px; }
+.product-info p { margin-bottom: 0; font-size: 10px; color: #73807a; }
+.product-arrow { font-size: 18px; color: #79866f; transition: transform .2s; }
+.product-card:hover .product-arrow { transform: translate(3px, -3px); }
+.product-note { border-top: 1px solid #cbd1c9; margin-top: 56px; padding-top: 18px; color: #6b7771; display: flex; gap: 11px; align-items: center; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.sparkle { color: #859b58; font-size: 15px; }
+.manifesto { background: var(--ink); color: white; position: relative; overflow: hidden; }
+.manifesto-image { position: absolute; inset: 0 0 0 auto; width: 42%; background: linear-gradient(90deg, var(--ink) 0%, rgb(16 27 32 / .12) 70%), url("https://images.unsplash.com/photo-1527761939622-9116d76b7f1a?auto=format&fit=crop&w=1300&q=85") center/cover; opacity: .45; }
+.manifesto-content { display: grid; grid-template-columns: 2fr .8fr; position: relative; z-index: 1; gap: 90px; }
+.manifesto .intro-kicker { color: #aeb8b4; }
+.manifesto .section-number { color: #899894; }
+.manifesto h2 { margin: 25px 0 20px; font-size: clamp(41px, 5vw, 62px); }
+.manifesto-lead { color: #b3bfbb; font: 500 17px/1.7 var(--serif); max-width: 430px; margin-bottom: 35px; }
+.promise-list { max-width: 570px; }
+.promise-item { border-top: 1px solid rgb(255 255 255 / .17); display: grid; grid-template-columns: 42px 1fr; gap: 10px; padding: 17px 0; }
+.promise-item > span { color: var(--lime); font: 13px var(--serif); }
+.promise-item h3 { font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+.promise-item p { color: #aeb9b5; font-size: 10px; margin: 0; }
+.manifesto-aside { align-self: center; padding: 16px 0 0 20px; }
+.big-asterisk { color: var(--lime); font-size: 39px; display: block; margin-bottom: 26px; }
+.manifesto-aside p { font: 500 29px/1.42 var(--serif); }
+.aside-rule { height: 1px; width: 36px; display: block; background: var(--lime); margin: 25px 0 14px; }
+.manifesto-aside small { color: #a7b2ae; font-size: 8px; letter-spacing: .14em; }
+.vision { background: #f3f4ef; }
+.vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11%; align-items: center; }
+.vision-art { min-height: 400px; background: #dce4d4; display: grid; place-items: center; position: relative; overflow: hidden; }
+.vision-art::before, .vision-art::after { content: ""; position: absolute; border: 1px solid rgb(95 115 77 / .22); border-radius: 50%; width: 400px; height: 400px; }
+.vision-art::after { width: 300px; height: 300px; }
+.vision-circle { width: 200px; height: 200px; border: 1px solid #899975; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #697d56; z-index: 1; }
+.vision-circle span { font-size: 38px; margin-bottom: 8px; }
+.vision-circle small { font-size: 8px; text-align: center; line-height: 1.5; letter-spacing: .16em; }
+.vision-label { position: absolute; bottom: 18px; left: 20px; font-size: 8px; text-transform: uppercase; letter-spacing: .14em; color: #6d7a65; }
+.vision-copy .intro-kicker { margin-bottom: 24px; }
+.vision h2 { margin: 0 0 23px; }
+.vision-copy > p { font-size: 12px; line-height: 1.9; color: #6e7a75; max-width: 450px; margin-bottom: 29px; }
+.button-outline { color: var(--ink); border-color: #aab3aa; }
+.button-outline span { color: #809461; }
+.button-outline:hover { background: var(--ink); color: white; border-color: var(--ink); }
+.contact { background: #dfe5d9; }
+.contact-grid { display: grid; grid-template-columns: 1fr .86fr; gap: 13%; }
+.contact-copy .intro-kicker { margin-bottom: 25px; }
+.contact h2 { margin: 0 0 21px; }
+.contact-copy > p { color: #68746b; font-size: 12px; line-height: 1.8; max-width: 400px; }
+.contact-details { margin-top: 37px; display: flex; flex-direction: column; align-items: start; gap: 19px; }
+.contact-details a { font-size: 13px; }
+.contact-details a span { display: block; color: #7c877d; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+.social-links { margin-top: 31px; display: flex; gap: 24px; }
+.social-links a { font-size: 10px; border-bottom: 1px solid #aab4a7; padding-bottom: 7px; }
+.social-links span { margin-left: 8px; color: #849563; }
+.contact-form { padding: 34px; background: #f5f6f1; }
+.form-heading { font: 500 25px var(--serif); margin-bottom: 23px; }
+.contact-form label { font-size: 9px; text-transform: uppercase; letter-spacing: .1em; display: block; margin: 17px 0 8px; color: #69766f; }
+.contact-form input, .contact-form textarea { width: 100%; border: 0; border-bottom: 1px solid #cfd5cc; border-radius: 0; padding: 11px 0; background: transparent; outline: none; font-size: 12px; color: var(--ink); resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: #718457; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: #a2aaa3; }
+.submit-button { border: 0; margin-top: 22px; min-width: 170px; }
+.form-note, .form-feedback { font-size: 9px; color: #87918a; margin: 12px 0 0; min-height: 12px; }
+.form-feedback { color: #476039; font-weight: 600; }
+.footer { background: var(--ink); color: white; padding: 47px 0 0; }
+.footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding-bottom: 38px; }
+.footer-brand { justify-self: start; }
+.footer-top > p { justify-self: center; font: 500 19px/1.5 var(--serif); margin: 0; color: #d1d8d3; }
+.back-top { justify-self: end; font-size: 10px; color: #d3dad5; }
+.back-top span { color: var(--lime); margin-left: 10px; font-size: 15px; }
+.footer-bottom { display: flex; justify-content: space-between; padding: 17px 0; border-top: 1px solid rgb(255 255 255 / .15); color: #9ea9a5; font-size: 9px; letter-spacing: .04em; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@keyframes hero-arrive { from { transform: scale(1.07); filter: brightness(.75); } to { transform: scale(1.02); filter: brightness(1); } }
+@media (min-width: 1400px) { .hero-content { padding-top: 235px; } }
+@media (max-width: 900px) {
+  .container { width: min(var(--max), calc(100% - 56px)); }
+  .nav-links { gap: 22px; }
+  .nav-links a { font-size: 11px; }
+  .hero { height: 720px; min-height: 680px; }
+  .hero-caption { left: 28px; right: 28px; }
+  .intro-grid { grid-template-columns: 1fr 3fr; }
+  .intro-stamp { display: none; }
+  .manifesto-content { gap: 35px; grid-template-columns: 1.7fr .8fr; }
+  .vision-grid { gap: 7%; }
+  .contact-grid { gap: 7%; }
+}
+@media (max-width: 650px) {
+  html { scroll-padding-top: 70px; }
+  .container { width: calc(100% - 40px); }
+  .site-header { height: 70px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .brand-name { font-size: 12px; }
+  .brand-name small { font-size: 7px; }
+  .menu-toggle { display: flex; flex-direction: column; gap: 6px; border: 0; background: transparent; padding: 10px 2px 10px 10px; color: inherit; cursor: pointer; }
+  .menu-toggle span { display: block; width: 23px; height: 1px; background: currentColor; transition: transform .2s; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+  .nav-links { display: none; position: absolute; top: 69px; left: 0; right: 0; background: var(--paper); color: var(--ink); padding: 14px 20px 22px; flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 16px 24px rgb(16 27 32 / .12); }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 15px 0; font-size: 13px; border-bottom: 1px solid #e1e5df; }
+  .nav-links .nav-contact { margin: 12px 0 0; padding: 13px 14px; border: 1px solid var(--ink); }
+  .hero { height: 790px; min-height: 700px; max-height: 95svh; }
+  .hero-photo { background-position: 58% center; }
+  .hero-shade { background: linear-gradient(90deg, rgb(9 20 25 / .73), rgb(9 20 25 / .3)), linear-gradient(0deg, rgb(10 18 20 / .45), transparent 48%); }
+  .hero-content { padding-top: 190px; }
+  h1 { font-size: clamp(63px, 18vw, 86px); margin-top: 24px; }
+  .hero-copy { font-size: 13px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
+  .hero-caption { left: 20px; right: 20px; bottom: 22px; }
+  .hero-caption span:last-child { display: none; }
+  .hero-side-note, .scroll-cue { display: none; }
+  .section-pad { padding: 82px 0; }
+  .intro-grid { grid-template-columns: 1fr; gap: 26px; }
+  .intro h2, .section-heading h2, .manifesto h2, .vision h2, .contact h2 { font-size: 44px; }
+  .intro h2 { margin-bottom: 25px; }
+  .intro-lower { grid-template-columns: 1fr; gap: 13px; }
+  .intro-lower .lead { font-size: 20px; }
+  .intro-lower p { font-size: 12px; }
+  .dark-link { margin-top: 8px; }
+  .section-heading { display: block; margin-bottom: 30px; }
+  .section-heading .intro-kicker { margin-bottom: 17px; }
+  .section-heading > p { margin-top: 13px; }
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 28px 13px; }
+  .product-feature, .product-wide { grid-column: span 2; }
+  .product-image, .product-feature .product-image, .product-wide .product-image { height: 250px; }
+  .product-feature .product-image { height: 340px; }
+  .product-info h3 { font-size: 18px; }
+  .product-info p { font-size: 9px; line-height: 1.5; }
+  .product-tag { top: 13px; right: 11px; font-size: 7px; padding: 6px 7px; }
+  .product-index { top: 14px; left: 12px; }
+  .product-note { margin-top: 35px; }
+  .manifesto-image { width: 100%; opacity: .18; background-position: 62% center; }
+  .manifesto-content { grid-template-columns: 1fr; gap: 40px; }
+  .manifesto h2 { margin-top: 21px; }
+  .manifesto-lead { font-size: 16px; }
+  .manifesto-aside { border-top: 1px solid rgb(255 255 255 / .18); padding: 24px 0 0; }
+  .big-asterisk { margin-bottom: 14px; }
+  .manifesto-aside p { font-size: 24px; margin-bottom: 16px; }
+  .aside-rule { margin: 17px 0 12px; }
+  .vision-grid { grid-template-columns: 1fr; gap: 34px; }
+  .vision-art { min-height: 300px; order: 2; }
+  .vision-art::before { width: 330px; height: 330px; }
+  .vision-art::after { width: 260px; height: 260px; }
+  .vision-circle { width: 170px; height: 170px; }
+  .vision-copy > p { font-size: 12px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 38px; }
+  .contact-copy > p { font-size: 12px; }
+  .contact-details { margin-top: 27px; }
+  .contact-form { padding: 27px 21px; }
+  .footer { padding-top: 35px; }
+  .footer-top { grid-template-columns: 1fr auto; row-gap: 26px; padding-bottom: 28px; }
+  .footer-top > p { justify-self: start; grid-column: 1 / 2; grid-row: 2; font-size: 16px; }
+  .back-top { grid-column: 2; grid-row: 2; }
+  .footer-bottom { display: grid; grid-template-columns: 1fr auto; row-gap: 11px; line-height: 1.5; }
+  .footer-bottom span:nth-child(2) { display: none; }
+  .footer-bottom a { justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Jaaz and Co. home">
+          <span class="brand-mark" aria-hidden="true"><span>J</span><i></i></span>
+          <span class="brand-name">JAAZ <b>&amp;</b> CO.<small>PVT. LTD.</small></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">Our story</a>
+          <a href="#products">The collection</a>
+          <a href="#why-us">Our promise</a>
+          <a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-photo" role="img" aria-label="Refreshing citrus drinks served over ice"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content container">
+          <p class="eyebrow light"><span class="eyebrow-line"></span> A fresher point of view</p>
+          <h1 id="hero-title">Refresh<br />your <em>moments.</em></h1>
+          <p class="hero-copy">A little sparkle. A lot of feeling.<br />Made for the moments that make a day.</p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#products">Explore our drinks <span aria-hidden="true">↘</span></a>
+            <a class="text-link light-link" href="#about">Get to know us <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="hero-caption"><span>01 / 05</span><span>Crafted for the everyday</span></div>
+        <div class="hero-side-note">GOOD TASTE. GOOD COMPANY.</div>
+        <a href="#about" class="scroll-cue" aria-label="Scroll to discover"><span></span>Scroll to discover</a>
+      </section>
+
+      <section class="intro section-pad" id="about" aria-labelledby="about-title">
+        <div class="container intro-grid">
+          <div class="intro-kicker reveal"><span class="section-number">01</span><span class="eyebrow">A little about us</span></div>
+          <div class="intro-main reveal">
+            <h2 id="about-title">A modern sip.<br /><em>An old soul.</em></h2>
+            <div class="intro-lower">
+              <p class="lead">We believe the best things in life are made to be shared — and always served cold.</p>
+              <p>At JAAZ &amp; CO., we bring a fresh perspective to the flavours we grew up with. Rooted in the familiar and made for the now, our drinks turn an everyday pause into something worth savouring. Honest ingredients, thoughtful craft, unmistakable refreshment.</p>
+            </div>
+            <a href="#vision" class="text-link dark-link">More about our outlook <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="intro-stamp" aria-hidden="true"><span>GOOD<br />THINGS<br /><i>TAKE A<br />SIP</i></span><b>✳</b></div>
+        </div>
+      </section>
+
+      <section class="products section-pad" id="products" aria-labelledby="products-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div><div class="intro-kicker"><span class="section-number">02</span><span class="eyebrow">Meet your new favourite</span></div>
+              <h2 id="products-title">The good <em>stuff.</em></h2></div>
+            <p>Bright, familiar, and always<br />better with a little fizz.</p>
+          </div>
+          <div class="product-grid">
+            <article class="product-card product-feature reveal">
+              <div class="product-image image-classic"><span class="product-index">01</span><span class="product-tag">The original</span></div>
+              <div class="product-info"><div><h3>Classic Soda</h3><p>Clean, crisp, endlessly refreshing.</p></div><span class="product-arrow" aria-hidden="true">↗</span></div>
+            </article>
+            <article class="product-card reveal">
+              <div class="product-image image-nannari"><span class="product-index">02</span><span class="product-tag">A little nostalgia</span></div>
+              <div class="product-info"><div><h3>Nannari Sarbath</h3><p>Rooted in tradition. Made for today.</p></div><span class="product-arrow" aria-hidden="true">↗</span></div>
+            </article>
+            <article class="product-card reveal">
+              <div class="product-image image-jeera"><span class="product-index">03</span><span class="product-tag">A savoury twist</span></div>
+              <div class="product-info"><div><h3>Jeera Soda</h3><p>A spirited take on a much-loved classic.</p></div><span class="product-arrow" aria-hidden="true">↗</span></div>
+            </article>
+            <article class="product-card reveal">
+              <div class="product-image image-flavoured"><span class="product-index">04</span><span class="product-tag">Find your flavour</span></div>
+              <div class="product-info"><div><h3>Flavoured Soda</h3><p>Playful flavours. Premium bubbles.</p></div><span class="product-arrow" aria-hidden="true">↗</span></div>
+            </article>
+            <article class="product-card product-wide reveal">
+              <div class="product-image image-traditional"><span class="product-index">05</span><span class="product-tag">From the good old days</span></div>
+              <div class="product-info"><div><h3>Traditional Refreshers</h3><p>Old favourites, with a JAAZ &amp; CO. kind of feeling.</p></div><span class="product-arrow" aria-hidden="true">↗</span></div>
+            </article>
+          </div>
+          <div class="product-note"><span class="sparkle">✳</span><span>Something good is always bubbling.</span></div>
+        </div>
+      </section>
+
+      <section class="manifesto section-pad" id="why-us" aria-labelledby="why-title">
+        <div class="manifesto-image" role="img" aria-label="Bubbles rising in a bright, refreshing drink"></div>
+        <div class="manifesto-content container">
+          <div class="manifesto-copy reveal">
+            <div class="intro-kicker"><span class="section-number">03</span><span class="eyebrow">The JAAZ &amp; CO. promise</span></div>
+            <h2 id="why-title">Made with care.<br /><em>Made to be shared.</em></h2>
+            <p class="manifesto-lead">A great drink should do more than quench a thirst. It should make the moment.</p>
+            <div class="promise-list">
+              <div class="promise-item"><span>01</span><div><h3>Quality, always</h3><p>Thoughtful choices and care in every detail.</p></div></div>
+              <div class="promise-item"><span>02</span><div><h3>Fresh by nature</h3><p>Bright flavours and that just-opened feeling.</p></div></div>
+              <div class="promise-item"><span>03</span><div><h3>Made for good times</h3><p>Easy to love. Even better together.</p></div></div>
+            </div>
+          </div>
+          <div class="manifesto-aside reveal"><span class="big-asterisk">✳</span><p>“The little pause<br />that changes<br /><em>everything.</em>”</p><span class="aside-rule"></span><small>THE JAAZ &amp; CO. WAY</small></div>
+        </div>
+      </section>
+
+      <section class="vision section-pad" id="vision" aria-labelledby="vision-title">
+        <div class="container vision-grid">
+          <div class="vision-art reveal"><div class="vision-circle"><span>✳</span><small>GOOD THINGS<br />ARE AHEAD</small></div><span class="vision-label">A brighter everyday</span></div>
+          <div class="vision-copy reveal">
+            <div class="intro-kicker"><span class="section-number">04</span><span class="eyebrow">Looking forward</span></div>
+            <h2 id="vision-title">A little more<br />refreshment.<br /><em>A lot more joy.</em></h2>
+            <p>We’re here to make the drinks you reach for feel a little more special. Our vision is to grow with care, keep reimagining the familiar, and bring a refreshing moment to more tables, more places, and more people.</p>
+            <a class="button button-outline" href="#contact">Let’s make good things happen <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <div class="intro-kicker"><span class="section-number">05</span><span class="eyebrow">We’d love to hear from you</span></div>
+            <h2 id="contact-title">Let’s make<br />something <em>good.</em></h2>
+            <p>For a friendly hello, a partnership, or just to say you love a good sarbath — our inbox is open.</p>
+            <div class="contact-details">
+              <a href="mailto:hello@jaazandco.com"><span>Email us</span>hello@jaazandco.com</a>
+              <a href="tel:+910000000000"><span>Give us a call</span>+91 00000 00000</a>
+            </div>
+            <div class="social-links" aria-label="Social media">
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+            </div>
+          </div>
+          <form class="contact-form reveal" id="contact-form">
+            <p class="form-heading">Drop us a note</p>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="How should we call you?" autocomplete="name" required />
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <label for="message">What’s on your mind?</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us a little about it…" required></textarea>
+            <button class="button button-lime submit-button" type="submit">Send your note <span aria-hidden="true">↗</span></button>
+            <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+            <p class="form-note">This demo form is ready to connect to your inbox.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-top">
+        <a class="brand footer-brand" href="#top" aria-label="Jaaz and Co., back to top"><span class="brand-mark" aria-hidden="true"><span>J</span><i></i></span><span class="brand-name">JAAZ <b>&amp;</b> CO.<small>PVT. LTD.</small></span></a>
+        <p>For the everyday<br /><em>worth remembering.</em></p>
+        <a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+      <div class="container footer-bottom"><span>© <span id="year"></span> JAAZ &amp; CO. PVT. LTD.</span><span>Made for good moments.</span><a href="mailto:hello@jaazandco.com">hello@jaazandco.com</a></div>
+    </footer>
+    <script>
+const header = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+  navLinks.classList.toggle('open', !isOpen);
+});
+
+navLinks.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    navLinks.classList.remove('open');
+  });
+});
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+const form = document.querySelector('#contact-form');
+const feedback = document.querySelector('#form-feedback');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+  const name = form.elements.name.value.trim();
+  feedback.textContent = `Thanks, ${name}! Your note is ready for the JAAZ & CO. team.`;
+  form.reset();
+});
+
+    </script>
+  </body>
+</html>
+
